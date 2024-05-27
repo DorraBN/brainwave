@@ -1,14 +1,15 @@
 
 import 'package:brainwave/home.dart';
 
+import 'package:brainwave/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/foundation.dart' show kIsWeb; // Importez kIsWeb pour détecter si l'application est web
 
 
 void main() async {
- 
-  // Lancez l'application Flutter
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 
@@ -20,10 +21,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-    //  home: ProfilePage(), 
-        home:WelcomePage()//ConcentricAnimationOnboarding()// Remplacez ceci par une instance de Register
-      // home: ConcentricAnimationOnboarding() ,
-     //home: MainScreen(),
+
+        home:ProfilePage()
+      
     );
   }
 }

@@ -1,4 +1,5 @@
 
+import 'package:brainwave/register.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
@@ -36,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("../../assets/b3.jpg"), // Remplacez "assets/login_background.jpeg" par le chemin de votre image
+                image: AssetImage("../../assets/g1.jpg"), 
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,11 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                            Image.asset(
-                              "../../assets/logo.png", // Remplacez "assets/b2.jpg" par le chemin de votre image
-                              width: 50.0,
-                              height: 50.0,
-                            ),
+                           
                           SizedBox(width: 10),
                           Text(
                             'Login In',
@@ -92,7 +89,7 @@ Container(
       ),
       hintText: 'Enter your email',
       filled: true,
-  fillColor: Colors.white.withOpacity(0.13),
+  fillColor: const Color.fromARGB(255, 208, 207, 207).withOpacity(0.13),
       prefixIcon: Icon(Icons.email, color: Colors.black),
       hintStyle: TextStyle(color: Colors.black),
       errorText: _emailErrorText,
@@ -161,12 +158,12 @@ Container(
                       GestureDetector(
   
   child: Container(
-    height: 40,
-    margin: EdgeInsets.symmetric(horizontal: 70.0),
+    height: 60,
+    margin: EdgeInsets.symmetric(horizontal: 90.0),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(50),
       gradient: LinearGradient(
-        colors: [Color.fromARGB(255, 186, 55, 203), const Color.fromARGB(255, 76, 86, 175)],
+        colors: [Color.fromARGB(255, 225, 183, 14), Color.fromARGB(255, 163, 135, 6)],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
       ),
@@ -212,7 +209,7 @@ Container(
                         alignment: Alignment.center,
                         child: GestureDetector(
                           onTap: () {
-                           
+                           Navigator.push(context, MaterialPageRoute(builder: (context) =>RegisterPage()));
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

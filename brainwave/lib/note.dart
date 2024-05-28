@@ -17,7 +17,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class NotePage extends StatelessWidget {
+class NotePage extends StatefulWidget {
+  @override
+  _NotePageState createState() => _NotePageState();
+}
+
+class _NotePageState extends State<NotePage> {
+  List<Widget> blocs = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,22 +41,73 @@ class NotePage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text(
-                'Votre contenu ici...',
-                style: TextStyle(fontSize: 18.0),
+              child: Column(
+                children: blocs,
               ),
             ),
-            // Ajoutez ici d'autres éléments que vous souhaitez faire défiler
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Actions à effectuer lorsque l'icône "add" est cliquée
+          setState(() {
+            blocs.add(EditableBlock());
+          });
         },
         child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+    );
+  }
+}
+
+class EditableBlock extends StatefulWidget {
+  @override
+  _EditableBlockState createState() => _EditableBlockState();
+}
+
+class _EditableBlockState extends State<EditableBlock> {
+  TextEditingController _textController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextFormField(
+                  controller: _textController,
+                  decoration: InputDecoration(
+                    hintText: 'Entrez votre texte ici...',
+                  ),
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  // Ouvrir la boîte de dialogue pour sélectionner un emoji
+                },
+                icon: Icon(Icons.restore_from_trash_sharp),
+              ),
+              IconButton(
+                onPressed: () {
+                  // Ouvrir la boîte de dialogue pour sélectionner une icône
+                },
+                icon: Icon(Icons.save),
+              ),
+            ],
+          ),
+          SizedBox(height: 8.0),
+          // Afficher ici les emojis ou les icônes sélectionnés
+        ],
+      ),
     );
   }
 }

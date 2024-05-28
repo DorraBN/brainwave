@@ -2,6 +2,7 @@
 import 'package:brainwave/home.dart';
 
 import 'package:brainwave/profile.dart';
+import 'package:brainwave/xo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/foundation.dart' show kIsWeb; // Importez kIsWeb pour détecter si l'application est web
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
 
-        home:ProfilePage()
+        home:TicTacToe()
       
     );
   }

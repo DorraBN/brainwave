@@ -1,4 +1,5 @@
 
+import 'package:brainwave/home1.dart';
 import 'package:brainwave/register.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -156,7 +157,9 @@ Container(
                       ),
                       SizedBox(height: 16.0),
                       GestureDetector(
-  
+  onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) =>Homepage()));
+                          },
   child: Container(
     height: 60,
     margin: EdgeInsets.symmetric(horizontal: 90.0),

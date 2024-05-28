@@ -1,5 +1,8 @@
+import 'package:brainwave/alarm.dart';
+import 'package:brainwave/game.dart';
 import 'package:brainwave/note.dart';
 import 'package:brainwave/profile.dart';
+import 'package:brainwave/revision.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +29,14 @@ class Homepage extends StatelessWidget {
     {'icon': Icons.message, 'text': 'Messages'},
     {'icon': Icons.notification_important, 'text': 'Notification'},
     {'icon': Icons.alarm_on, 'text': 'Alarm On'},
+    {'icon': Icons.menu_book_outlined, 'text': 'book'},
+    {'icon': Icons.video_chat, 'text': 'lessons'},
+    {'icon': Icons.language_rounded, 'text': 'language'},
+    {'icon': Icons.work_history_outlined, 'text': 'internship'},
+     {'icon': Icons.map, 'text': 'maproad'},
+     {'icon': Icons.cookie, 'text': 'cook'},
+       {'icon': Icons.mosque, 'text': 'pray'},
+         {'icon': Icons.games, 'text': 'game'},
   ];
 
   @override
@@ -54,6 +65,24 @@ class Homepage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => NotePage ()),
+                  );
+                }
+                 else if (items[index]['text'] == 'Alarm On') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AlarmPage ()),
+                  );
+                }
+                else if (items[index]['text'] == 'Revision') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RevisionPage ()),
+                  );
+                }
+                else if (items[index]['text'] == 'game') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GamePage ()),
                   );
                 }
               },

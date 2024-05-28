@@ -1,6 +1,5 @@
 import 'package:brainwave/alarm.dart';
 import 'package:brainwave/game.dart';
-import 'package:brainwave/islam.dart';
 import 'package:brainwave/note.dart';
 import 'package:brainwave/profile.dart';
 import 'package:brainwave/revision.dart';
@@ -15,29 +14,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Homepage with Icons and Text',
-      home: Homepage(),
+      home:Islampage(),
     );
   }
 }
 
-class Homepage extends StatelessWidget {
+class Islampage extends StatelessWidget {
   final List<Map<String, dynamic>> items = [
-    {'icon': Icons.home, 'text': 'Home'},
-    {'icon': Icons.person, 'text': 'Profile'},
-    {'icon': Icons.music_note, 'text': 'Music'},
-    {'icon': Icons.assignment, 'text': 'Revision'},
-    {'icon': Icons.folder, 'text': 'Folder'},
-    {'icon': Icons.message, 'text': 'Messages'},
-    {'icon': Icons.notification_important, 'text': 'Notification'},
-    {'icon': Icons.alarm_on, 'text': 'Alarm On'},
-    {'icon': Icons.menu_book_outlined, 'text': 'book'},
-    {'icon': Icons.video_chat, 'text': 'lessons'},
-    {'icon': Icons.language_rounded, 'text': 'language'},
-    {'icon': Icons.work_history_outlined, 'text': 'internship'},
-     {'icon': Icons.map, 'text': 'maproad'},
-     {'icon': Icons.cookie, 'text': 'cook'},
-       {'icon': Icons.mosque, 'text': 'Islam'},
-         {'icon': Icons.games, 'text': 'game'},
+    {'icon': Icons.star_half, 'text': 'الأدعية'},
+    {'icon': Icons.access_time, 'text': 'أوقات الصلاة'},
+    {'icon': Icons.mosque, 'text': 'الصلاة'},
+    {'icon': Icons.book, 'text': 'القرآن الكريم'},
   ];
 
   @override
@@ -84,12 +71,6 @@ class Homepage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => GamePage ()),
-                  );
-                }
-                 else if (items[index]['text'] == 'Islam') {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Islampage ()),
                   );
                 }
               },

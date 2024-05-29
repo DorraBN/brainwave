@@ -1,8 +1,8 @@
-import 'package:brainwave/alarm.dart';
-import 'package:brainwave/game.dart';
-import 'package:brainwave/note.dart';
-import 'package:brainwave/profile.dart';
-import 'package:brainwave/revision.dart';
+import 'package:brainwave/choice.dart';
+import 'package:brainwave/clock.dart';
+import 'package:brainwave/hadith.dart';
+import 'package:brainwave/pray.dart';
+import 'package:brainwave/quran.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Homepage with Icons and Text',
-      home:Islampage(),
+      home: Islampage(),
     );
   }
 }
@@ -30,6 +30,9 @@ class Islampage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('صفحة الإسلام'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
@@ -43,37 +46,30 @@ class Islampage extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                if (items[index]['text'] == 'Profile') {
+                if (items[index]['text'] == 'القرآن الكريم') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                    MaterialPageRoute(builder: (context) => Choicepage()),
                   );
                 }
-                  else if (items[index]['text'] == 'Notification') {
+                else  if (items[index]['text'] == 'الصلاة') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NotePage ()),
+                    MaterialPageRoute(builder: (context) => PrayPage()),
                   );
                 }
-                 else if (items[index]['text'] == 'Alarm On') {
+                else  if (items[index]['text'] == 'أوقات الصلاة') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AlarmPage ()),
+                    MaterialPageRoute(builder: (context) => PrayerTimesPage()),
                   );
                 }
-                else if (items[index]['text'] == 'Revision') {
+                else  if (items[index]['text'] == 'الأدعية') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RevisionPage ()),
+                    MaterialPageRoute(builder: (context) => HadithPage()),
                   );
-                }
-                else if (items[index]['text'] == 'game') {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GamePage ()),
-                  );
-                }
-              },
+                }},
               child: Card(
                 color: Colors.purple, // Set card color to mauve
                 elevation: 4,
@@ -102,4 +98,3 @@ class Islampage extends StatelessWidget {
     );
   }
 }
-

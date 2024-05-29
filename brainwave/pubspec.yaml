@@ -38,6 +38,8 @@ dependencies:
   emoji_picker_flutter: ^1.6.4
   flutter_local_notifications: ^17.1.2
   google_fonts: ^6.2.0
+  wave: ^0.2.2
+  audioplayers: ^5.2.1
 
 dev_dependencies:
   flutter_test:
